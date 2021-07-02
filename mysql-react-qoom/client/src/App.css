@@ -1,3 +1,5 @@
-body {
-  background-color: purple;
+html, body {
+  margin: 0px;
+  min-height: 100%;
+  width: 100%;
 }

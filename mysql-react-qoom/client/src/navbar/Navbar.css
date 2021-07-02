@@ -1,0 +1,41 @@
+nav {
+    background: #efefee;
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left {
+    width: 20%;
+}
+.right {
+    width: 30%;
+}
+
+.navElement {
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+}
+.navElement:hover {
+    background-color:#d6d6d3;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.pfp {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}

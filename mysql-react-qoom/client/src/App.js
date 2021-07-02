@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import Navbar from './navbar/Navbar';
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -7,11 +8,15 @@ function App() {
   React.useEffect(() => {
     fetch("/test")
     .then((response) => response.json())
-    .then((data) => setData(data.hello));
+    .then((data) => setData(data.message));
   });
 
   return (
-    <h1>{data}</h1>
+      // Adjacent JSX elements must be enclosed in tags like these. idk why tbh.
+      <>
+        <Navbar/>
+      </>
+      
   )
 
 }
