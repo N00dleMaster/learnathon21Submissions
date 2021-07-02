@@ -3,3 +3,9 @@ html, body {
   min-height: 100%;
   width: 100%;
 }
+
+#greeting {
+  padding-left: 4rem;
+  font-weight: 400;
+  font-size: 3.5rem;
+}

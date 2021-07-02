@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Navbar from './navbar/Navbar';
+import TodoGrid from './todoGrid/TodoGrid';
 
 function App() {
   const [data, setData] = React.useState(null);
@@ -15,6 +16,8 @@ function App() {
       // Adjacent JSX elements must be enclosed in tags like these. idk why tbh.
       <>
         <Navbar/>
+        <h1 id="greeting">Hello, here are your Todos for today!</h1>
+        <TodoGrid />
       </>
       
   )

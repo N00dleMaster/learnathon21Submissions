@@ -1,0 +1,9 @@
+.todoList {
+    box-sizing: border-box;
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    background-color: #b3b3b3;
+    border-radius: 1.5rem;
+    border: 3px dashed #8b8b8b
+}
