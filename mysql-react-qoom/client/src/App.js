@@ -6,7 +6,7 @@ function App() {
 
   React.useEffect(() => {
     fetch("/test")
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => setData(data.hello));
   });
 
