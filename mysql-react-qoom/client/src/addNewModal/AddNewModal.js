@@ -37,7 +37,6 @@ const AddNewModal = (props) => {
         console.log("Value of the input at index " + e.target.name + " is " + value);
         const listCopy = [...todosToAdd];
         listCopy[i].todo = value;
-        console.log()
         // For debugging =========
         // let values = "The values in the todosToAdd are ";
         // let modifiedValues=  "The values in the listCopy are ";
@@ -84,7 +83,6 @@ const AddNewModal = (props) => {
                         <input id="addTodoList" type="submit" value="Add Todolist!"/>
                     </div>
                 </form>
-                
                 
                 <button id="closeModal" onClick={handleClose}>
                     <FontAwesomeIcon icon={faTimes} />

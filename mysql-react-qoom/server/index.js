@@ -43,6 +43,24 @@ app.post("/add-todo-list", (req, res) => {
     res.sendStatus(201);
     console.log(req.body.todoListName);
     console.log(JSON.stringify(req.body.todosToAdd));
+});
+
+app.delete("/delete-todo", (req, res) => {
+    for(let entry of db) {
+        if(entry.listName == req.body.listName) {
+            entry.todos.splice(entry.todos.indexOf(req.body.todoToDelete), 1); // dleet the corresponding todo
+            res.sendStatus(201);
+        }
+    }
+});
+
+app.put("/update-todo", (req, res) => {
+    for(let entry of db) {
+        if(entry.listName == req.body.listName) {
+            entry.todos[entry.todos.indexOf(req.body.originalTodo)] = req.body.updatedTodo;
+            res.sendStatus(201);
+        }
+    }
 })
 
 
