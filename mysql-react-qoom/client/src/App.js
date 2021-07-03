@@ -7,10 +7,12 @@ import AddNewModal from './addNewModal/AddNewModal';
 function App() {
 
     const [isModalShown, setModalShown] = React.useState(false);
+    const [refreshTodoGrid, setRefreshTodoGrid] = React.useState(false); // the component re-renders whenever the state changes
     
     // This function is a callback that retrieves data from a child component (specifically the Navbar)
     const handleModal = () => {
         setModalShown(!isModalShown);
+        setRefreshTodoGrid(!refreshTodoGrid);
         console.log("showModal is now " + isModalShown);
     }
 
@@ -20,7 +22,7 @@ function App() {
             <Navbar parentCallBack={handleModal}/>
             <h1 id="greeting">Hello, here are your Todos for today!</h1>
             <AddNewModal parentCallBack={handleModal} isShown={isModalShown}/>
-            <TodoGrid />
+            <TodoGrid refresh={refreshTodoGrid}/>
         </>
         
     )

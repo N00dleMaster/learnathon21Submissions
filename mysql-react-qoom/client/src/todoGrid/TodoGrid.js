@@ -5,16 +5,17 @@ import TodoList from "./todoList/TodoList";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
-const TodoGrid = () => {
+const TodoGrid = (props) => {
 
     const [ todos, setTodos] = React.useState([{listName: "Loading..."}]);
 
+    // The second argument is a dependency. Every time the dependency changes, this func. runs
     useEffect(() => {
         console.log("I ran")
-        fetch("/test")
+        fetch("/get-todos")
         .then((res) => res.json())
         .then((data) => setTodos(data));
-    }, []);
+    }, [props.refresh]);
 
     return (
         <div id="todoGrid">
@@ -23,9 +24,6 @@ const TodoGrid = () => {
                     return (<TodoList>{todo.listName}</TodoList>);
                 })
             }
-            <TodoList>
-                <FontAwesomeIcon icon={faPlus} />
-            </TodoList>
         </div> 
     );
 };

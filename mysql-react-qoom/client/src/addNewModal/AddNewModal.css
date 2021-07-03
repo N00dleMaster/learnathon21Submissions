@@ -68,6 +68,11 @@
     margin-top: 2rem;
 }
 
+#submitForm {
+    display: flex;
+    flex-direction: column;
+}
+
 .fieldHeader {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -107,4 +112,7 @@
     background-color: #2ec401;
     padding: 0.6rem;
     margin: 0.5rem;
+}
+#addTodoList:hover {
+    background-color: #229101;
 }
