@@ -4,7 +4,16 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faCogs } from '@fortawesome/free-solid-svg-icons'
 
-const Navbar = () => {
+
+const Navbar = (props) => {
+
+
+    const handleClick = () => {
+        console.log("I ran you fat cuck");
+        props.parentCallBack();
+    }
+
+
     return (
         <nav>
             <div className="navContainer left">
@@ -12,9 +21,9 @@ const Navbar = () => {
             </div>
             <div className="navContainer right">
                 <div className="navElement">
-                    <img className="pfp" src="https://i.redd.it/v0caqchbtn741.jpg"></img>
+                    <img className="pfp" alt="pfp" src="https://i.redd.it/v0caqchbtn741.jpg"></img>
                 </div>
-                <div className="navElement">
+                <div className="navElement" onClick={handleClick}>
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
                 <div className="navElement">
