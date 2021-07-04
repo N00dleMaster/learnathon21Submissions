@@ -13,7 +13,7 @@ const AddNewModal = (props) => {
     // This state stores an array of all the todos we've added so far
     const [todosToAdd, setTodosToAdd] = React.useState([
         {
-            todo: "bruh momento",
+            todo: "",
             name: 0
         } // example starter
     ]);

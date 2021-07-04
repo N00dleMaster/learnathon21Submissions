@@ -9,7 +9,7 @@ const TodoListModal = (props) => {
 
     let showOrHide = props.isShown ? "ohWowLookItsBack" : "ohWowLookItsGone";
 
-    const [todos, setTodos] = React.useState([...props.todos]);
+    const [todos, setTodos] = React.useState(props.todos);
 
     const [currentEdit, setCurrentEdit] = React.useState("");
 
@@ -63,7 +63,6 @@ const TodoListModal = (props) => {
 
     const handleInputChange = (e) => {
         setCurrentEdit(e.target.value);
-        console.log("value of input that is being edited is " + e.target.value + " and state is " + currentEdit);
     }
 
 
@@ -73,9 +72,9 @@ const TodoListModal = (props) => {
             <div id="todoDescModal">
                 <p className="subtitle">{props.listName}</p>
                 <ul>
-                    {todos.map(todo=> <li className="todo">
+                    {props.todos.map(todo=> <li className="todo">
                         <p className="todoText">{todo}</p>
-                        <form onSubmit={updateTodo} id="editForm" class="invisible">
+                        <form onSubmit={updateTodo} id="editForm" className="invisible">
                             <input type="text" value={currentEdit} onChange={e=>handleInputChange(e)}></input>
                             <button>Edit</button>
                         </form>

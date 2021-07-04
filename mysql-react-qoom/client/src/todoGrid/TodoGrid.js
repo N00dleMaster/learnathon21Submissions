@@ -11,14 +11,17 @@ const TodoGrid = (props) => {
         console.log("I ran")
         fetch("/get-todos")
         .then((res) => res.json())
-        .then((data) => setTodos(data));
-    }, [props.refresh]);
+        .then((data) => setTodos([...data]));
+        console.log(todos);
+    }, [props.refresh, todos]);
 
     const refreshTodoGrid = () => {
         console.log("I ran")
         fetch("/get-todos")
         .then((res) => res.json())
-        .then((data) => setTodos(data));
+        .then((data) => {
+            setTodos(data)
+        });
     }
 
     return (

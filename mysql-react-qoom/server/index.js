@@ -41,9 +41,16 @@ app.post("/add-todo-list", (req, res) => {
     }
     db.push(newEntry);
     res.sendStatus(201);
-    console.log(req.body.todoListName);
-    console.log(JSON.stringify(req.body.todosToAdd));
 });
+
+app.delete("/delete-todo-list", (req, res) => {
+    for(let i=0; i<db.length; i++) {
+        if(db[i].listName == req.body.listName) {
+            db.splice(i, 1);
+            res.sendStatus(201);
+        }
+    }
+})
 
 app.delete("/delete-todo", (req, res) => {
     for(let entry of db) {
